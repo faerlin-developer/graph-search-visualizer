@@ -1,0 +1,2 @@
+START_X, START_Y = 15, 15
+END_X, END_Y = 35, 35

@@ -1,0 +1,6 @@
+RUN_ID = 'run'
+CLEAR_ALL_ID = 'clear all'
+CLEAR_VISITED_ID = 'clear visited'
+GRID_ID = 'grid'
+MODIFY_STATE_ID = 'modify state'
+ALGORITHM_ID = 'algorithm'

@@ -1,0 +1,5 @@
+X = 'x'
+Y = 'y'
+STATE = 'state'
+SYMBOL = 'symbol'
+PARENT = 'parent'
