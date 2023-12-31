@@ -48,7 +48,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-The application assumes Python version of 3.6+
+The application assumes Python version 3.6+
 
 ```bash
 $ pip install plotly
