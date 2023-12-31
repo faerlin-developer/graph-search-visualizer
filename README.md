@@ -40,7 +40,7 @@ grid cells. Moreover, the locations of the start and end cells can also be moved
 
 ### Built With
 
-* [Dash][dash-url] Plotly Dash
+* [Plotly Dash][dash-url]
 
 ## Getting Started
 
