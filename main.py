@@ -3,24 +3,22 @@ import logging
 import dash_bootstrap_components as dbc
 from dash import dcc, html
 
-from callbacks import callback_grid
+from callbacks import handler
 from constants.ids import GRID_ID
 from graph import grid
 from ui import app
-from ui.components import intro_div, modify_cell_radio, select_algorithm_radio, run_buttons
+from ui.components import paragraph1, paragraph2, modify_cell_radio, select_algorithm_radio, run_buttons
 from ui.figure import create_figure
 
 
-# TODO:
-# 1. Comments
-# 3. README
-
 def main():
-    """"""
+    """Initialize the layout of the dash application and run server."""
 
     card = dbc.Card(
         [
-            intro_div,
+            paragraph1,
+            html.Br(),
+            paragraph2,
             html.Hr(),
             modify_cell_radio,
             select_algorithm_radio,
@@ -60,7 +58,7 @@ def main():
 def log_callbacks():
     log = logging.getLogger('werkzeug')
     log.setLevel(logging.INFO)
-    log.info(f"added dash callback {callback_grid.__name__}")
+    log.info(f"added dash callback {handler.__name__}")
 
 
 if __name__ == '__main__':

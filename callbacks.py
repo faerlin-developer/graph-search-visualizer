@@ -14,19 +14,24 @@ from ui.figure import create_figure
 
 @app.callback(
     Output('grid', 'figure'),
-    [Input('grid', 'clickData'), Input('run', 'n_clicks'),
-     Input('clear all', 'n_clicks'), Input('clear visited', 'n_clicks')],
-    [State('algorithm', 'value'), State('modify state', 'value')]
+    [
+        Input('grid', 'clickData'),  # clicking on a grid cell
+        Input('run', 'n_clicks'),  # clicking on the run button
+        Input('clear visited', 'n_clicks'),  # clicking on the clear-visited button
+        Input('clear all', 'n_clicks')  # clicking on the clear-visited-and-obstacle button
+    ],
+    [
+        State('algorithm', 'value'),  # selecting an algorithm radio item
+        State('modify state', 'value')  # selecting a modify-state radio item
+    ]
 )
-def callback_grid(click_data, run_clicks, clear_visited_clicks, clear_all_clicks, algorithm, state_option):
+def handler(click_data, run_clicks, clear_visited_clicks, clear_all_clicks, algorithm, state_option):
     """"""
 
-    if len(click_data) == 0 and run_clicks == 0 and clear_visited_clicks == 0 and clear_all_clicks == 0:
+    if zero_values(click_data, run_clicks, clear_visited_clicks, clear_all_clicks):
         return create_figure(grid.toDataFrame())
 
-    triggered_id = ctx.triggered_id
-
-    if triggered_id == RUN_ID:
+    if ctx.triggered_id == RUN_ID:
 
         grid.clear_visited()
 
@@ -47,13 +52,13 @@ def callback_grid(click_data, run_clicks, clear_visited_clicks, clear_all_clicks
                 grid.set_state(x, y, PATH)
             node = grid.get_parent(x, y)
 
-    if triggered_id == CLEAR_ALL_ID:
+    if ctx.triggered_id == CLEAR_ALL_ID:
         grid.clear_all()
 
-    if triggered_id == CLEAR_VISITED_ID:
+    if ctx.triggered_id == CLEAR_VISITED_ID:
         grid.clear_visited()
 
-    if triggered_id == GRID_ID:
+    if ctx.triggered_id == GRID_ID:
 
         point = click_data['points'][0]
         x, y = point['x'], point['y']
@@ -75,3 +80,7 @@ def callback_grid(click_data, run_clicks, clear_visited_clicks, clear_all_clicks
                 grid.set_state(x, y, END)
 
     return create_figure(grid.toDataFrame())
+
+
+def zero_values(click_data, run_clicks, clear_visited_clicks, clear_all_clicks):
+    return len(click_data) == 0 and run_clicks == 0 and clear_visited_clicks == 0 and clear_all_clicks == 0
