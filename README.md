@@ -33,8 +33,9 @@
 </div>
 <br/>
 
-This web application visualizes the path and the nodes visited by two graph search algorithms: breadth-first search and
-A*. The grid is initialized with obstacles forming a maze. The obstacle cells can be added or removed by clicking on the
+This Plotly Dash web application visualizes the path and the nodes visited by two graph search algorithms: breadth-first
+search and A*. The grid is initialized with obstacles forming a maze. The obstacle cells can be added or removed by
+clicking on the
 grid cells. Moreover, the locations of the start and end cells can also be moved.
 
 ### Built With
