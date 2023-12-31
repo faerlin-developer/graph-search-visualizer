@@ -21,6 +21,7 @@
         <li><a href="#running-the-application">Running the Application</a></li>
       </ul>
     </li>
+    <li><a href="#improvements">Improvements</a></li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
@@ -62,6 +63,12 @@ $ python main.py
 ```
 
 View the running application at `http://localhost:8050`.
+
+## Improvements
+
+1. Add Depth-First search algorithm as one of the options for graph traversal.
+2. Animate the traversal of the search algorithm.
+3. Deploy the web application on the Heroku platform.
 
 ## License
 
