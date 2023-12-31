@@ -62,6 +62,8 @@ $ pip install dash-bootstrap-components
 $ python main.py
 ```
 
+View the running application at `http://localhost:8050`.
+
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
