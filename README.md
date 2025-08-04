@@ -8,21 +8,9 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#running-the-application">Running the Application</a></li>
-      </ul>
-    </li>
-    <li><a href="#improvements">Improvements</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#docker-deployment">Docker Deployment</a></li>
+    <li><a href="#built-with">Built With</a></li>
   </ol>
 </details>
 
@@ -38,44 +26,23 @@ This __Plotly Dash__ web application visualizes the path and the nodes visited b
 __breadth-first search__ and __A*__. The grid is initialized with obstacles forming a maze. The obstacle cells can be
 added or removed by clicking on the grid cells. Moreover, the locations of the start and end cells can also be moved.
 
-### Built With
 
-* [Plotly Dash][dash-url]
 
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-### Prerequisites
-
-The application assumes Python version 3.6+
+## Docker Deployment
 
 ```bash
-$ pip install plotly
-$ pip install dash
-$ pip install dash-bootstrap-components 
+docker build -t path-finding:latest .
+docker run -it --rm -p 8050:8050 path-finding:latest
 ```
-
-### Running the Application
-
-```bash
-$ python main.py
-```
-
-View the running application at `http://localhost:8050`.
-
-## Improvements
-
-1. Add Depth-First search algorithm as one of the options for graph traversal.
-2. Animate the traversal of the search algorithm.
-3. Deploy the web application on the Heroku platform.
-
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+Open the application at `localhost:8050`.
+
+## Built With
+
+* [Plotly Dash][dash-url]
 
 [license-url]: LICENSE.txt
 

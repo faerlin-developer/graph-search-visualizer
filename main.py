@@ -52,7 +52,6 @@ def main():
     )
 
     log_callbacks()
-    app.run_server()
 
 
 def log_callbacks():
@@ -61,5 +60,5 @@ def log_callbacks():
     log.info(f"added dash callback {handler.__name__}")
 
 
-if __name__ == '__main__':
-    main()
+server = app.server
+main()
