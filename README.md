@@ -2,7 +2,7 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <div align="center">
-    <h3 align="center">Graph Search Visualizer</h3>
+    <h3 align="center">Path Finding Algorithms</h3>
 </div>
 
 <details>
