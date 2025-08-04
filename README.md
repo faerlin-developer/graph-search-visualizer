@@ -27,8 +27,7 @@ __breadth-first search__ and __A*__. The grid is initialized with obstacles form
 added or removed by clicking on the grid cells. Moreover, the locations of the start and end cells can also be moved.
 
 
-
-## Docker Deployment
+## Building and Running with Docker
 
 ```bash
 docker build -t path-finding:latest .
